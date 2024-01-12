@@ -2,6 +2,7 @@
 let currentAudio;
 let isLoop = false;
 let audioPath;
+let loopAudioFile;
 
 
 document.addEventListener("orientationchange", function(event){
@@ -33,7 +34,7 @@ $('th').on('click', function(){
 	}
 	
 	if (command.indexOf("loop") > 0){
-		isLoop = 1
+		isLoop = true
 	}
 	$('#audioPlayingName').text(`"${$(this).text()}"`)
 	
@@ -45,12 +46,13 @@ $('th').on('click', function(){
 	if (isLoop){
 		audioPath = `sounds/${folderName}/${command}.wav`
 		
-		loopify(audioPath, function(err,loop) {
+		loopify(audioPath, function(err, loop) {
 
 		  if (err) {
 			return console.err(err);
 		  }
-		  loop.play();
+		  loopAudio = loop
+		  loopAudioFile.play();
 		})
 
 	}else{
@@ -79,11 +81,11 @@ $('th').on('click', function(){
 
 document.addEventListener('keydown', evt => {
 	
-	if (currentAudio != undefined || currentAudio != null) {
-	}else {
+	if (currentAudio == undefined || currentAudio == null) {
 		return
 	}
 	if (evt.key === 'Escape') {
+		
 		if(isLoop){
 			currentAudio.onended = function(){
 				pressEsq()
@@ -102,10 +104,17 @@ function loopAudio(){
 }
 
 function pressEsq(){
+	isLoop = false
 	console.log("esq")
 	currentAudio.pause()
 	currentAudio.currentTime = 0
 	currentAudio = null
+	
+	if(loopAudioFile != undefined && loopAudioFile!= null){
+		loopAudioFile.stop()
+	}
+	
+	
 	$('#currentAudioPlaying').css('opacity','0')
 	$('#currentAudioPlaying').css('pointer-events','none')
 }
