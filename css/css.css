@@ -10,8 +10,11 @@ th{
 
 #title{
 	text-align: center;
+	font-family: 'Bebas Neue', sans-serif;
 }
-
+tr td {
+    white-space: nowrap;
+}
 
 th:hover{
 	cursor:pointer;
@@ -20,16 +23,18 @@ th:hover{
 #table{
 	margin: 0px;
 	padding: 0px;
+	text-align: -webkit-center;
 	min-height: 100%;
-	height: 100%;
+	height: auto;
+	width:auto;
 	margin-bottom: -150px;
 }
 html{
 	transition:opacity 2s;
 	margin: 0px;
-  padding: 0px;
-  min-height: 100%;
-  height: 100%;
+	padding: 0px;
+	min-height: 100%;
+	height: 100%;
 	
 	background-color: black;
     color: white;
@@ -39,16 +44,15 @@ body{
 }
 
 table{
-	
+	border-collapse:separate; 
+	border-spacing: 0 1em;
 	color: white;
 	
 }
 
 .icon{
 	width:80px;
-	
 }
-
 
 #currentAudioPlaying div{
 	text-align: center;
@@ -68,13 +72,43 @@ table{
     position: absolute;
 }
 
-#banda{
+button{
+	cursor:pointer;
+}
+#stopPlaying{
+	width: 50vw;
+    height: 15vh;
+    border: none;
+    border-radius: 50px;
+    font-size: 25px;
+    color: white;
+    background: #ff000061;
+}
+
+
+.highlight{
+	color:#f94242;
+}
+.cetnerText h1{
+	margin: 0;
+    position: absolute;
+    top: 0;
+}
+.centerText{
+	text-align:center;
+	text-align:webkit-center;
+	
+}
+.cancao{
+	background-color: #00ff452e;
+}
+.banda{
 	background-color:#00ffff2e; 
 }
-#bumbo{
+.bumbo{
 	background-color:#ff006a2e;
 }
-#corneta{
+.corneta{
 	background-color:#ffff002e;
 }
 

@@ -1,11 +1,20 @@
 <html>
 	<head>
+		<title>Formatura Bizurada</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/css.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+		
 	</head>
 	<body>
 		<div id="currentAudioPlaying">
 			<div>
+				<div class="centerText">
+					<h1>PRESSIONE "<span class="highlight">ESQ</span>" PARA PARAR O ÁUDIO</h1>
+					<button id="stopPlaying" onclick="pressEsq()">PARAR DE TOCAR</button>
+				</div>
 				<h1 id="audioPlayingTitle">TOCANDO AGORA:</h1>
 				<h2 id="audioPlayingName">""</h2>
 			</div>
@@ -16,7 +25,7 @@
 		</div>
 		<div id="table">
 		<table>
-			<tr id="corneta">
+			<tr class="corneta">
 				<th><img class="icon" src="imgs/icons/bugle.png"></th>
 				<th>Sentido</th>
 				<th>Descansar</th>
@@ -24,18 +33,24 @@
 				<th>Apresentar Arma</th>
 				<th>Descansar Arma</th>
 				<th>Voltas Volver</th>
+			</tr>
+			<tr class="corneta">
 				<th>Cruzar Arma</th>
 				<th>Armar Baioneta</th>
-				<th></th>
 			</tr>
-			<tr id="bumbo">
+			<tr class="bumbo">
 				<th><img class="icon" src="imgs/icons/kick.png"></th>
 				<th>Bumbo</th>
 				<th>Ordinario Marche</th>
+				<th>Caixa e Bumbo (Loop)</th>
 			</tr>
-			<tr id="banda">
+			<tr class="banda">
 				<th><img class="icon" src="imgs/icons/banda.png"></th>
 				<th>Granadeira</th>
+			</tr>
+			<tr class="cancao">
+				<th><img class="icon" src="imgs/icons/cancao.png"></th>
+				<th>3 B Log</th>
 			</tr>
 		</table>
 		</div>
@@ -50,5 +65,6 @@
   integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
   crossorigin="anonymous"></script>
 	<script src="js/js.js"></script>
+	<script src="js/loopify.js" type="text/javascript"></script>
 	</body>
 </html>
