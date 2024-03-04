@@ -190,6 +190,6 @@ function pressEsq(cameFromFadeOut){
 
 $( window ).on( "load", function() {
   if(screen.width < 700){
-	  $(".leak").append($("#secondBugle"))
+	 // $(".leak").append($("#secondBugle"))
   }
 } );
