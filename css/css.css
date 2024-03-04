@@ -31,6 +31,7 @@ th:hover{
 	margin: 0px;
 	padding: 0px;
 	text-align: -webkit-center;
+    text-align: -moz-center;
 	min-height: 80%;
 	height: auto;
 	width:auto;
